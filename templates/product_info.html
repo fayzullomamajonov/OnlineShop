@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for product in product %}
+    <div style="text-align: center;">
+        <img src="{{product.photo_image.url}}" alt="{{product.name}}">
+        <h1>{{product.name}}</h1>
+        <h5>{{product.phone_model}}</h5>
+        <p>{{ product.color }}</p>
+        <p>{{product.at_date | date:"D-m Y"}}</p>
+    </div>
+    {% endfor %}
+{% endblock %}

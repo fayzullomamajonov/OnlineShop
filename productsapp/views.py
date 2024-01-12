@@ -1,9 +1,31 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render
-from django.views.generic import TemplateView,DeleteView
+from .models import *
+from django.views.generic import DeleteView
 # Create your views here.
 
-class HomePageView(TemplateView):
-    template_name='home.html'
+def categorymodel(request):
+    categorys = CategoryModel.objects.all()
+    context = {
+        'categorys': categorys
+    }
 
-class ProductsView(TemplateView):
-    template_name = 'products.html'
+    return render(request,'home.html',context=context)
+
+def productlist(request,category):
+    products = ProductModel.objects.filter(category=category)
+
+    context = {
+        'products':products
+    }
+    return render(request,'product.html',context=context)
+
+
+def get_product_info(request, pk):
+    product = ProductModel.objects.filter(id=pk)
+    context = {
+        'product':product
+    }
+
+    return render(request,'product_info.html',context=context)

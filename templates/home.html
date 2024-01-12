@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <a href="{% url 'products' %}">Products list</a>
-    {% block content %}
-
-    {% endblock %}
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <h1 style="text-align: center;color: orange;">Categorys</h1>
+    {% for category in categorys %}
+    <h3 style="text-align: center;">
+        <a style="text-decoration: none;" href="{% url 'product' category.category %}">{{category | title}}</a>
+    </h3>
+    {% endfor %}
+{% endblock %}
