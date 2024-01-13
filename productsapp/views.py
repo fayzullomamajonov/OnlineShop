@@ -15,9 +15,10 @@ def categorymodel(request):
 
 def productlist(request,category):
     products = ProductModel.objects.filter(category=category)
-
+    category = category
     context = {
-        'products':products
+        'products':products,
+        'category':category
     }
     return render(request,'product.html',context=context)
 

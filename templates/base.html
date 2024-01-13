@@ -1,11 +1,45 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product_info.css' %}">
     <title>Online Shop</title>
 </head>
 <body>
+    <header class="main-header">
+        <div class="container">
+        <div class="main-header__brand">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'image/logo1.jpg' %}" alt="Logo">
+            </a>
+        </div>
+        <nav class="main-navigation">
+            <ul class="main-navigation__items">
+                <li class="main-navigation__item active">
+                    <a href="#">Asossiy</a>
+                </li>
+                <li class="main-navigation__item">
+                    <a href="#">About me</a>
+                </li>
+                <li class="main-navigation__item">
+                    <a href="#">Xizmatlar</a>
+                </li>
+                <li class="main-navigation__item">
+                    <a href="#">Mijozlar</a>
+                </li>
+                <li class="main-navigation__item">
+                    <a href="#">Hamkorlar</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
     {% block content %}
 
     {% endblock %}

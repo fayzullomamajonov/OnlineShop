@@ -1,0 +1,29 @@
+.main-section{
+    padding: 100px 30px;
+}
+
+.product-info__image{
+    width: 400px;
+    height: 350px;
+}
+.product-info__items > div{
+    display: inline-block;
+    margin-right: 40px;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+}
+
+.info-right{
+    display: inline-block;
+}
+
+.image-left{
+    width: 50%;
+}
+.ingo-right{
+    display: inline-block;
+    color: gray;
+}
+

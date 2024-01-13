@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1 style="text-align: center;color: orange;">Categorys</h1>
-    {% for category in categorys %}
-    <h3 style="text-align: center;">
-        <a style="text-decoration: none;" href="{% url 'product' category.category %}">{{category | title}}</a>
-    </h3>
-    {% endfor %}
+    <div class="main-section">
+        <div class="container">
+            <h1 class="products-title">Categorys</h1>
+            <div class="category-items">
+                {% for category in categorys %}
+                <a class="category-items__link" href="{% url 'product' category.category %}">{{category | title}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

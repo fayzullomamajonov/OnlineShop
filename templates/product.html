@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for product in products %}
-        <div style="text-align: center;">
-            <img src="{{ product.photo_image.url }}" alt="{{product.model}}">
-            <h4><a style="text-decoration: none;" href="{% url 'product_info' product.pk %}">{{product.name | title}}</a></h4>
+    <div class="main-section">
+        <div class="container">
+            <h1 class="section-title"><b>Category: </b>{{ category }}</h1>
+            <div class="services__cards">
+                {% for product in products %}
+                <div class="service-card">
+                    <img src="{{ product.photo_image.url }}" alt="{{product.model}}">
+                    <a href="{% url 'product_info' product.pk %}">{{product.name | title}} ({{ product.phone_model }})</a>
+                </div>
+                {% endfor %}
+                
+            </div>
+           <div class="go-back">
+                <a href="{% url 'home' %}"><< ortga</a>
+           </div>
         </div>
-        <hr>
-    {% endfor %}
+    </div>
 {% endblock %}

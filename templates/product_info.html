@@ -1,13 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for product in product %}
-    <div style="text-align: center;">
-        <img src="{{product.photo_image.url}}" alt="{{product.name}}">
-        <h1>{{product.name}}</h1>
-        <h5>{{product.phone_model}}</h5>
-        <p>{{ product.color }}</p>
-        <p>{{product.at_date | date:"D-m Y"}}</p>
+<div class="container">
+    <div class="main-section">
+        {% for product in product %}
+            <div class="product-info__items">
+                <div class="image-left">
+                    <img class="product-info__image" src="{{product.photo_image.url}}" alt="{{product.name}}">
+                </div>
+                <div class="info-right">
+                    <h1 class="product-name"><b>Name:</b> {{product.name}}</h1>
+                    <h5 class="product-model"><b>Model:</b> {{product.phone_model}}</h5>
+                    <p class="product-color"><b>Color:</b> {{ product.color }}</p>
+                    <p class="product-at_date"><b>At Date:</b> {{product.at_date | date:"D-m Y"}}</p>
+                </div>
+            </div>
+            <a class="category-items__link" href="{% url 'product' product.category %}"><< ortga</a>
+        {% endfor %}
+        
     </div>
-    {% endfor %}
+</div>
 {% endblock %}
