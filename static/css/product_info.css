@@ -5,6 +5,7 @@
 .product-info__image{
     width: 400px;
     height: 350px;
+    border: 2px solid #ccc;
 }
 .product-info__items > div{
     display: inline-block;
@@ -21,6 +22,7 @@
 
 .image-left{
     width: 50%;
+
 }
 .ingo-right{
     display: inline-block;

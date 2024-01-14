@@ -6,7 +6,7 @@
         {% for product in product %}
             <div class="product-info__items">
                 <div class="image-left">
-                    <img class="product-info__image" src="{{product.photo_image.url}}" alt="{{product.name}}">
+                    <img style="border: 2px solid #ccc; border-radius: 10px;" class="product-info__image" src="{{product.photo_image.url}}" alt="{{product.name}}">
                 </div>
                 <div class="info-right">
                     <h1 class="product-name"><b>Name:</b> {{product.name}}</h1>
