@@ -2,13 +2,25 @@
 {% block content %}
     <div class="main-section">
         <div class="container">
-            <h1 class="products-title">Categorys</h1>
-            <div class="category-items">
-                {% for category in categorys %}
-                <a class="category-items__link" href="{% url 'product' category.category %}">{{category | title}}</a>
-                {% endfor %}
-            </div>
+            {% if request.user.is_authenticated %}
+                <div class="">
+                    <span>Username: <span class="category-items__link">{{ request.user.username | title}}</span></span>
+                    <a class="category-items__link" href="{% url 'logout' %}">Logout</a>
+                </div>
+                <h1 class="products-title">Categorys</h1>
+                <div class="category-items">
+                    {% for category in categorys %}
+                    <a class="category-items__link" href="{% url 'product' category.category %}">{{category | title}}</a>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <a class="category-items__link" href="{% url 'login' %}">Login</a>
+                <a class="category-items__link" href="{% url 'signup' %}">Signup</a>
+            {% endif %}
+                
         </div>
     </div>
 
 {% endblock %}
+
+

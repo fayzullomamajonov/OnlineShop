@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Login</h1>
+<form method="POST" class="uniForm">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button class="category-items__link" type="submit">Login</button>
+    <a class="category-items__link" href="{% url 'signup' %}">SignUp</a>
+</form>
+
+{% endblock %}

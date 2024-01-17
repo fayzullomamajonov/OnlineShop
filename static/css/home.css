@@ -15,7 +15,7 @@
     text-transform: capitalize;
     color: rgb(146, 97, 6);
 }
-.category-items__link{
+.category-items__link {
     text-decoration: none;
     margin: 10px;
     padding: 10px 5px;
@@ -28,7 +28,6 @@
     width: 150px;
     text-align: center;
 }
-
 
 .category-items__link:hover{
     background-color: rgb(229, 159, 29);
